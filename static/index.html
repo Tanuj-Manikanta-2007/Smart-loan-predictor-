@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Loan Predictor</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>💰 Smart Loan Predictor</h1>
+            <p>Get an instant prediction on your loan approval status</p>
+        </header>
+
+        <main>
+            <form id="loanForm" class="form-container">
+                <div class="form-group">
+                    <label for="gender">Gender</label>
+                    <select id="gender" name="gender" required>
+                        <option value="">Select Gender</option>
+                        <option value="male">Male</option>
+                        <option value="female">Female</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="age">Age (18-100)</label>
+                    <input type="number" id="age" name="age" min="18" max="100" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="maritalStatus">Marital Status</label>
+                    <select id="maritalStatus" name="maritalStatus" required>
+                        <option value="">Select Status</option>
+                        <option value="single">Single</option>
+                        <option value="married">Married</option>
+                        <option value="divorced">Divorced</option>
+                        <option value="widowed">Widowed</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="education">Education Level</label>
+                    <select id="education" name="education" required>
+                        <option value="">Select Education</option>
+                        <option value="high_school">High School</option>
+                        <option value="bachelor">Bachelor's Degree</option>
+                        <option value="master">Master's Degree</option>
+                        <option value="phd">PhD</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="employmentType">Employment Type</label>
+                    <select id="employmentType" name="employmentType" required>
+                        <option value="">Select Type</option>
+                        <option value="salaried">Salaried</option>
+                        <option value="self_employed">Self-Employed</option>
+                        <option value="business">Business Owner</option>
+                        <option value="unemployed">Unemployed</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="employmentYears">Years of Employment</label>
+                    <input type="number" id="employmentYears" name="employmentYears" min="0" max="70" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="income">Annual Income ($)</label>
+                    <input type="number" id="income" name="income" min="0" step="1000" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="homeOwnership">Home Ownership</label>
+                    <select id="homeOwnership" name="homeOwnership" required>
+                        <option value="">Select Ownership</option>
+                        <option value="rent">Rent</option>
+                        <option value="own">Own</option>
+                        <option value="mortgage">Mortgage</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="creditScore">Credit Score (0-850)</label>
+                    <input type="number" id="creditScore" name="creditScore" min="0" max="850" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="existingLoans">Existing Loans</label>
+                    <input type="number" id="existingLoans" name="existingLoans" min="0" max="20" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="loanAmount">Requested Loan Amount ($)</label>
+                    <input type="number" id="loanAmount" name="loanAmount" min="0" step="1000" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="loanPurpose">Loan Purpose</label>
+                    <select id="loanPurpose" name="loanPurpose" required>
+                        <option value="">Select Purpose</option>
+                        <option value="home">Home Purchase</option>
+                        <option value="car">Car Purchase</option>
+                        <option value="education">Education</option>
+                        <option value="business">Business</option>
+                        <option value="personal">Personal</option>
+                        <option value="debt_consolidation">Debt Consolidation</option>
+                    </select>
+                </div>
+
+                <button type="submit" class="btn-submit">Get Prediction</button>
+            </form>
+
+            <div id="loadingSpinner" class="spinner" style="display: none;"></div>
+
+            <div id="resultContainer" class="result-container" style="display: none;">
+                <div class="result-card">
+                    <div id="predictionResult" class="prediction-result"></div>
+                    <div id="probabilityResult" class="probability-result"></div>
+                    <div id="riskResult" class="risk-result"></div>
+                    <div id="recommendationResult" class="recommendation-result"></div>
+                </div>
+            </div>
+
+            <div id="errorContainer" class="error-container" style="display: none;">
+                <p id="errorMessage"></p>
+            </div>
+        </main>
+
+        <footer>
+            <p>&copy; 2026 Smart Loan Predictor. All rights reserved.</p>
+        </footer>
+    </div>
+
+    <script src="/static/script.js"></script>
+</body>
+</html>
